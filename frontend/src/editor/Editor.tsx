@@ -55,7 +55,7 @@ const Editor = () => {
 }
 
 const onError = (error: Error, editor: LexicalEditor): void => {
-    console.log(error)
+    throw error;
 }
 
 export default Editor

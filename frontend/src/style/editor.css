@@ -1,3 +1,11 @@
+.ltr {
+    text-align: left;
+}
+
+.rtl {
+    text-align: right;
+}
+
 .paragraph {
     position: relative;
     display: block;
@@ -31,19 +39,19 @@
     font-weight: bold;
 }
 
-.h5 {
-    display: block;
-    font-size: .83em;
-    margin: 1.67em 0;
-}
-
-.h6 {
-    display: block;
-    font-size: .67em;
-    margin: 2.33em 0;
+/* Text formatting */
+.pen-format-bold {
     font-weight: bold;
 }
 
-.indent {
-    --lexical-indent-base-value: 20px;
+.pen-format-italic {
+    font-style: italic;
+}
+
+.pen-format-underline {
+    text-decoration: underline;
+}
+
+.pen-format-strikethrough {
+    text-decoration: line-through;
 }
