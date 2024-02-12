@@ -8,7 +8,7 @@ import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 
 import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
 import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin';
-import { TRANSFORMERS } from '@lexical/markdown';
+import { TRANSFORMERS } from './plugins/markdown-transformers';
 
 import { HeadingNode, QuoteNode } from '@lexical/rich-text';
 import { CodeNode } from '@lexical/code';
