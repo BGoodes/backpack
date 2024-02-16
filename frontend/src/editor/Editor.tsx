@@ -1,4 +1,4 @@
-import { LexicalEditor } from "lexical";
+import { EditorState, LexicalEditor } from "lexical";
 
 import { InitialConfigType } from "@lexical/react/LexicalComposer";
 import { LexicalComposer } from '@lexical/react/LexicalComposer';
@@ -18,8 +18,13 @@ import { LinkNode } from '@lexical/link';
 import { theme } from './theme';
 import '../style/editor.css';
 
+import NotebookService from '../services/NotebookService';
+
 const Editor = () => {
     
+    NotebookService.createNotebook({ title: "test", content: '{"root":{"children":[{"children":[{"text":"Hello World","type":"text","format":"","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1}],"direction":null,"format":"","indent":0,"type":"root","version":1}}' });
+    const initialEditorState = NotebookService.getNotebook("test")?.content;
+
     const nodes = [
         HeadingNode,
         QuoteNode,
@@ -30,6 +35,7 @@ const Editor = () => {
     ];
 
     const initialConfig: InitialConfigType = {
+        editorState: initialEditorState,
         namespace: 'Pen',
         theme,
         nodes,
@@ -48,7 +54,7 @@ const Editor = () => {
             />
             
             <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-            <HistoryPlugin />
+            <HistoryPlugin />   
 
         </LexicalComposer>
     );

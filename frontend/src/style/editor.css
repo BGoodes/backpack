@@ -7,33 +7,35 @@
 }
 
 .paragraph {
-    position: relative;
+    font-size: 1em;
     display: block;
+    position: relative;
     margin: 1em 0;
 }
 
 .h1 {
-    display: block;
     font-size: 2em;
+    display: block;
     margin: 0.67em 0;
     font-weight: bold;
 }
 
 .h2 {
-    display: block;
     font-size: 1.5em;
+    display: block;
     margin: 0.83em 0;
     font-weight: bold;
 }
 
 .h3 {
-    display: block;
     font-size: 1.17em;
+    display: block;
     margin: 1em 0;
     font-weight: bold;
 }
 
 .h4 {
+    font-size: 1em;
     display: block;
     margin: 1.33em 0;
     font-weight: bold;
@@ -59,6 +61,6 @@
 .pen-format-code {
     background-color: rgb(240, 242, 245);
     padding: 1px 0.25rem;
-    font-family: Menlo, Consolas, Monaco, monospace;
+    font-family: Menlo, Consolas, Monaco, monospace; 
     font-size: 94%;
 }
