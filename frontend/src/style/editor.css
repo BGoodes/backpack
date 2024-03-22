@@ -41,6 +41,19 @@
     font-weight: bold;
 }
 
+.pen-quote {
+    display: block;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background-color: rgb(240, 242, 245);
+    border-left: 0.25em solid rgb(204, 204, 204);
+}
+
+.pen-link {
+    color: #0366d6;
+    text-decoration: none;
+}
+
 /* Text formatting */
 .pen-format-bold {
     font-weight: bold;
@@ -64,3 +77,5 @@
     font-family: Menlo, Consolas, Monaco, monospace; 
     font-size: 94%;
 }
+
+/* Code block */

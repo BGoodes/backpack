@@ -29,7 +29,7 @@ class NotebookService {
     }
 
     private static generateId(): string {
-      return "test";
+      return Math.random().toString(36).substring(2, 15);
     }
 }
 
