@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class NotebookService {
@@ -21,7 +22,7 @@ public class NotebookService {
     public List<Notebook> getAllNotebooks() {
         return repository.findAll();
     }
-    public Optional<Notebook> getNotebook(Long id) {
+    public Optional<Notebook> getNotebook(UUID id) {
         return repository.findById(id);
     }
 
