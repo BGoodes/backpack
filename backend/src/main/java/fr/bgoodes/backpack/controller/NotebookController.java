@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1")
 public class NotebookController {
 
     private final NotebookService service;
@@ -38,7 +38,7 @@ public class NotebookController {
         service.saveNotebook(notebook);
     }
 
-    @PostMapping("/notebooks/{id}")
+    @PutMapping("/notebooks/{id}")
     public void updateNotebook(@PathVariable("id") UUID id) {
         //TODO: implement this
     }
