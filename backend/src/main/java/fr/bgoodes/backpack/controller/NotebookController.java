@@ -39,7 +39,13 @@ public class NotebookController {
     }
 
     @PostMapping("/notebooks/{id}")
-    public void updateNotebook() {
+    public void updateNotebook(@PathVariable("id") UUID id) {
         //TODO: implement this
+    }
+
+    @DeleteMapping("/notebooks/{id}")
+    public void deleteNotebook(@PathVariable("id") UUID id) {
+        Optional<Notebook> notebook = getNotebook(id);
+        notebook.ifPresent(service::removeNotebook);
     }
 }

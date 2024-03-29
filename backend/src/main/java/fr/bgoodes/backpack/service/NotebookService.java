@@ -22,11 +22,16 @@ public class NotebookService {
     public List<Notebook> getAllNotebooks() {
         return repository.findAll();
     }
+
     public Optional<Notebook> getNotebook(UUID id) {
         return repository.findById(id);
     }
 
     public Notebook saveNotebook(Notebook notebook) {
         return repository.save(notebook);
+    }
+
+    public void removeNotebook(Notebook notebook) {
+        repository.delete(notebook);
     }
 }
