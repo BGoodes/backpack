@@ -1,25 +1,56 @@
-import { LexicalEditor } from "lexical";
-
-import { InitialConfigType } from "@lexical/react/LexicalComposer";
-import { LexicalComposer } from '@lexical/react/LexicalComposer';
-import { RichTextPlugin } from '@lexical/react/LexicalRichTextPlugin'
-import { ContentEditable } from '@lexical/react/LexicalContentEditable'
+import {InitialConfigType, LexicalComposer} from "@lexical/react/LexicalComposer";
+import {RichTextPlugin} from '@lexical/react/LexicalRichTextPlugin'
+import {ContentEditable} from '@lexical/react/LexicalContentEditable'
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 
-import { HistoryPlugin } from '@lexical/react/LexicalHistoryPlugin'
-import { MarkdownShortcutPlugin } from '@lexical/react/LexicalMarkdownShortcutPlugin';
-import { TRANSFORMERS } from '@lexical/markdown';
+import {HistoryPlugin} from '@lexical/react/LexicalHistoryPlugin'
+import {MarkdownShortcutPlugin} from '@lexical/react/LexicalMarkdownShortcutPlugin';
+import {TRANSFORMERS} from './plugins/markdown-transformers';
+import {HeadingNode, QuoteNode} from '@lexical/rich-text';
+import {CodeNode} from '@lexical/code';
+import {ListItemNode, ListNode} from '@lexical/list';
+import {LinkNode} from '@lexical/link';
 
-import { HeadingNode, QuoteNode } from '@lexical/rich-text';
-import { CodeNode } from '@lexical/code';
-import { ListNode, ListItemNode } from '@lexical/list';
-import { LinkNode } from '@lexical/link';
-
-import { theme } from './theme';
+import {theme} from './theme';
 import '../style/editor.css';
 
+import NotebookService from '../services/NotebookService';
+import Notebook from "../../interface/Notebook";
+
 const Editor = () => {
-    
+
+    const notebook: Notebook = NotebookService.createNotebook({
+        title: "test",
+        content: JSON.stringify({
+            root: {
+                children: [
+                    {
+                        children: [
+                            {
+                                text: "Hello World",
+                                type: "text",
+                                format: "",
+                                version: 1
+                            }
+                        ],
+                        direction: null,
+                        format: "",
+                        indent: 0,
+                        type: "paragraph",
+                        version: 1
+                    }
+                ],
+                direction: null,
+                format: "",
+                indent: 0,
+                type: "root",
+                version: 1
+            }
+        }, null, 2)
+    });
+
+    const notebookState: string = notebook.content;
+
     const nodes = [
         HeadingNode,
         QuoteNode,
@@ -30,6 +61,7 @@ const Editor = () => {
     ];
 
     const initialConfig: InitialConfigType = {
+        editorState: notebookState,
         namespace: 'Pen',
         theme,
         nodes,
@@ -48,14 +80,14 @@ const Editor = () => {
             />
             
             <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
-            <HistoryPlugin />
+            <HistoryPlugin />   
 
         </LexicalComposer>
     );
 }
 
-const onError = (error: Error, editor: LexicalEditor): void => {
-    console.log(error)
+const onError = (error: Error): void => {
+    throw error;
 }
 
 export default Editor
