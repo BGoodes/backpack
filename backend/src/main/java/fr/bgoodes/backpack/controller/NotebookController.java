@@ -39,8 +39,8 @@ public class NotebookController {
     }
 
     @PutMapping("/notebooks/{id}")
-    public void updateNotebook(@PathVariable("id") UUID id) {
-        //TODO: implement this
+    public Notebook saveNotebook(@RequestBody Notebook notebook, @PathVariable("id") UUID id) {
+        return service.saveNotebook(notebook);
     }
 
     @DeleteMapping("/notebooks/{id}")
