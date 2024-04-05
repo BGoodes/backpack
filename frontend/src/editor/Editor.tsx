@@ -14,42 +14,7 @@ import {LinkNode} from '@lexical/link';
 import {theme} from './theme';
 import '../style/editor.css';
 
-import NotebookService from '../services/NotebookService';
-import Notebook from "../../interface/Notebook";
-
 const Editor = () => {
-
-    const notebook: Notebook = NotebookService.createNotebook({
-        title: "test",
-        content: JSON.stringify({
-            root: {
-                children: [
-                    {
-                        children: [
-                            {
-                                text: "Hello World",
-                                type: "text",
-                                format: "",
-                                version: 1
-                            }
-                        ],
-                        direction: null,
-                        format: "",
-                        indent: 0,
-                        type: "paragraph",
-                        version: 1
-                    }
-                ],
-                direction: null,
-                format: "",
-                indent: 0,
-                type: "root",
-                version: 1
-            }
-        }, null, 2)
-    });
-
-    const notebookState: string = notebook.content;
 
     const nodes = [
         HeadingNode,
@@ -61,7 +26,6 @@ const Editor = () => {
     ];
 
     const initialConfig: InitialConfigType = {
-        editorState: notebookState,
         namespace: 'Pen',
         theme,
         nodes,
