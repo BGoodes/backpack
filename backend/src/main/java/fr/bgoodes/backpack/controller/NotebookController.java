@@ -32,10 +32,10 @@ public class NotebookController {
     }
 
     @PostMapping("/notebooks")
-    public void addNotebook() {
+    public Notebook addNotebook() {
         Page page = new Page("");
         Notebook notebook = new Notebook("", List.of(page));
-        service.saveNotebook(notebook);
+        return service.saveNotebook(notebook);
     }
 
     @PutMapping("/notebooks/{id}")
