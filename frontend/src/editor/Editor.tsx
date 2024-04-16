@@ -13,8 +13,9 @@ import {LinkNode} from '@lexical/link';
 
 import {theme} from './theme';
 import '../style/editor.css';
+import Page from "../interface/page.ts";
 
-const Editor = () => {
+const Editor = (page: Page) => {
 
     const nodes = [
         HeadingNode,
@@ -26,6 +27,7 @@ const Editor = () => {
     ];
 
     const initialConfig: InitialConfigType = {
+        editorState: page.content,
         namespace: 'Pen',
         theme,
         nodes,
