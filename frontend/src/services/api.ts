@@ -20,13 +20,13 @@ class ApiService {
         return response.json();
     }
 
-    static async update(id: string, data: Notebook): Promise<Notebook> {
+    static async update(id: string, notebook: Notebook): Promise<Notebook> {
         const response = await fetch(`${API_URL}/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(notebook),
         });
         return response.json();
     }
