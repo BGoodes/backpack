@@ -1,4 +1,4 @@
-import 'Editor.css';
+import 'editor.css';
 
 function Editor() {
     return (
