@@ -2,7 +2,8 @@ import { Route, Routes } from "react-router-dom"
 
 import Home from "./views/Home"
 import NotFound from "./views/NotFound"
-import Editor from "./components/editor/Editor"
+// import Editor from "./components/editor/Editor"
+import LatexEditor from "./components/editor/LatexEditor"
 
 function App() {
 
@@ -10,7 +11,7 @@ function App() {
     <div className="app">
           <Routes>
             <Route index element={<Home />} />
-            <Route path="editor" element={<Editor />} />
+            <Route path="editor" element={<LatexEditor />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
     </div>
