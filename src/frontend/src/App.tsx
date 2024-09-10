@@ -1,17 +1,19 @@
-import {Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom"
 
-import NotFoundPage from "./pages/NotFoundPage.tsx";
-import HomePage from "./pages/HomePage.tsx";
+import Home from "./views/Home"
+import NotFound from "./views/NotFound"
+import Editor from "./components/editor/Editor"
 
-const App = () => {
+function App() {
 
   return (
-      <div className="app">
+    <div className="app">
           <Routes>
-            <Route index element={<HomePage />} />
-            <Route path="*" element={<NotFoundPage />} />
+            <Route index element={<Home />} />
+            <Route path="editor" element={<Editor />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
-      </div>
+    </div>
   )
 }
 
