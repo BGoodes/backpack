@@ -1,0 +1,82 @@
+.pen-ltr {
+    text-align: left;
+}
+
+.pen-rtl {
+    text-align: right;
+}
+
+.pen-paragraph {
+    margin: 0;
+    position: relative;
+}
+
+.pen-quote {
+    font-size: 15px;
+    color: rgb(101, 103, 107);
+    border-left-color: rgb(206, 208, 212);
+    border-left-width: 4px;
+    border-left-style: solid;
+    padding-left: 16px;
+    margin: 0;
+}
+
+.pen-format-code {
+    background-color: rgb(240, 242, 245);
+    padding: 1px 0.25rem;
+    font-family: Menlo, Consolas, Monaco, monospace;
+    font-size: 94%;
+}
+
+/* Heading styles */
+.pen-heading-h1 {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.pen-heading-h2 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.pen-heading-h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.pen-heading-h4 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Text formatting */
+.pen-format-bold {
+    font-weight: bold;
+}
+
+.pen-format-italic {
+    font-style: italic;
+}
+
+.pen-format-underline {
+    text-decoration: underline;
+}
+
+.pen-format-strikethrough {
+    text-decoration: line-through;
+}
+
+/* Link styling */
+.pen-link {
+    color: rgb(33, 111, 219);
+    text-decoration: none;
+}
+
+.pen-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
