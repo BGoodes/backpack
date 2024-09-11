@@ -1,9 +1,10 @@
+import React from "react";
 import Navbar from "../components/navbar/Navbar";
 
-function Home() {
+function ArticleBrowser() {
   return (
     <Navbar />
   );
 }
 
-export default Home;
+export default ArticleBrowser;
